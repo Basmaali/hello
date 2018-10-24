@@ -1,0 +1,16 @@
+#!/bin/bash
+echo -n Enter Integer N: 
+read N
+echo N= $N
+echo n enter array : 
+read -a num 
+N=$((${#num[*]}))
+echo array = ${num[*]}
+echo N of array = $N
+array[0]=${num[0]}
+echo array= ${array[*]}
+for ((i=1;i<$N;i=i+1))
+do
+	j=0
+
+done

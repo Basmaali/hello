@@ -1,0 +1,24 @@
+#!/bin/bash
+declare -A matrix
+for ((i=0;i<=63;i++))
+do
+  for ((j=0;j<=100;j++))
+  do
+     matrix[$i,$j]='_'
+  done
+done
+echo ${matrix[*]}
+p1=$1
+#echo $p1
+p2=$(echo $2-1 | bc)
+#echo $p2
+p1=$(echo $p1-1 |bc)
+#echo $p1
+p3=$(echo 2^$p2 | bc)
+echo $p3
+p4=$(echo 2*$p3 | bc)
+echo $p4
+p5=$(echo $p3/2 | bc)
+#echo $p5
+p6=$3
+#echo $3

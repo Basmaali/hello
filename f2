@@ -1,0 +1,20 @@
+#!/bin/bash
+#awk 'BEGIN { FS=" " ; OFS=":" } { if ($2>=50 && $3>=50 && $4>=50){print $1,"Pass"} else {print $1,"Fail"} } ' l1
+#awk 'BEGIN {OFS=":" }{ if ($2 >=50) { print $1,"pass"} }' l1
+#awk 'BEGIN { FS=" " ; OFS=":" } { x=$((($2+$3+$4)/3)) 
+#if ($x >80) print $0,"A" 
+#else if ($x<80 && $x>60)  print $0,"B" 
+#else if ($x>50 && $x<60) print $0,"C" 
+#else print $0,"Fail" } ' l1
+
+#awk '{print $0 }' l1 | paste -d";" - -
+
+#awk '{ if (NR%2 ==0) 
+#print $0"\n"
+#else
+#print $0";" }' l1 
+awk '{ if (NR%2) {
+ORS=";";print $0 }
+else {
+ORS="\n";print $0 }
+}' l1
